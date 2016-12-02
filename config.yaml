@@ -1,0 +1,25 @@
+---
+cog_bundle_version: 4
+name: k8s
+description: Interact with a Kubernetes cluster
+version: 0.0.3
+author: Marc Campbell <marc.e.campbell@gmail.com>
+docker: 
+  image: marc/kubernetes-cog
+  tag: latest
+permissions:
+  - k8s:read
+commands:
+  pods:
+    description: List all pods in the cluster
+    executable: /home/bundle/bin/pods
+    rules:
+      - when command is k8s:pods must have k8s:read
+templates:
+  pods:
+    body: |
+      | NAME | READY | STATUS | RESTARTS | AGE |
+      |------|-------|--------|----------|-----|
+      ~each var=\$results~
+      |~\$item.name~|~\$item.ready~|~\$item.status~|~\$item.restarts~|~\$item.age~|
+      ~end~
