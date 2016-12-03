@@ -8,3 +8,5 @@ WORKDIR /home/bundle
 COPY . /home/bundle
 
 RUN yarn
+RUN mkdir -p lib && ./node_modules/.bin/tsc
+ 
