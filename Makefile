@@ -1,12 +1,5 @@
 build:
+	rm -rf lib
 	mkdir -p lib
+	./node_modules/.bin/tslint --project ./tsconfig.json
 	./node_modules/.bin/tsc
-
-test:
-	yarn test
-
-docker:
-	docker build -t marc/kubernetes-cog .
-
-deploy:
-	docker push marc/kubernetes-cog

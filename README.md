@@ -14,6 +14,7 @@ k8s:pvc <cluster> - `kubectl get pvc`
 ```
 
 ## Configuration
+For a configuration example, see `dynamic-config.example.yaml`
 ```
 K8S_DEFAULT_CLUSTER=<the default cluster idx when one is not specified>
 K8S_CLUSTER_COUNT=<the number of clusters configured>
@@ -40,4 +41,4 @@ Clone this repo and then:
 make build
 ```
 
-This project is written in Node, but using a typescript transpiler to take advantage of async/await functionality. It could also use typescript!
+This project is written in TypeScript, targeting Node 7.1.x

@@ -5,14 +5,15 @@ description: Interact with a Kubernetes cluster
 version: 0.0.3
 author: Marc Campbell <marc.e.campbell@gmail.com>
 docker: 
-  image: marc/kubernetes-cog
+  image: retracedhq/kubernetes-cog
   tag: latest
 permissions:
   - k8s:read
 commands:
   pods:
-    description: List all pods in the cluster
-    executable: /home/bundle/bin/pods
+    description: List all pods in the named cluster
+    executable: node /home/bundle/lib/pods.js
+    arguments: '<name>'
     rules:
       - when command is k8s:pods must have k8s:read
 templates:

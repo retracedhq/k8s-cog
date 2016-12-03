@@ -1,6 +1,9 @@
 {
-  "extends": "tslint:recommended"
-//   "rules": {
-//     "no-parameter-properties": true
-//   }
+  "extends": "tslint:recommended",
+  "rules": {
+    "ordered-imports": [false],
+    "no-console": [false],
+    "interface-name": [false],
+    "object-literal-sort-keys": false
+  }
 }
