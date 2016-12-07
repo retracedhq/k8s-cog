@@ -1,12 +1,13 @@
 FROM node:7.1.0-alpine
 
-RUN apk --no-cache add python bash build-base ca-certificates
+ENV GOPATH=/home/bundle/go
 
+RUN apk --no-cache add python bash build-base ca-certificates
 RUN npm i -g yarn
 
-WORKDIR /home/bundle
-COPY . /home/bundle
+WORKDIR /home/bundle/k8s-cog
+COPY . /home/bundle/k8s-cog
 
 RUN yarn
-RUN mkdir -p lib && ./node_modules/.bin/tsc
- 
+RUN make
+RUN chmod +x lib/cmd/*.js
