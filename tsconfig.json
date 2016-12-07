@@ -11,8 +11,7 @@
         "outDir": "lib"
     },
     "include": [
-        "src/**/*",
-        "typedefs"
+        "src/**/*"
     ],
     "exclude": [
         "node_modules",
