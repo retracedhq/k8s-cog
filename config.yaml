@@ -2,7 +2,7 @@
 cog_bundle_version: 5
 name: k8s
 description: Interact with a Kubernetes cluster
-version: 0.0.3
+version: 0.0.4
 author: Marc Campbell <marc.e.campbell@gmail.com>
 docker: 
   image: retracedhq/kubernetes-cog
@@ -31,3 +31,9 @@ templates:
       ~each var=\$results~
       |~\$item.name~|~\$item.ready~|~\$item.status~|~\$item.restarts~|~\$item.age~|
       ~end~
+  deploy:
+    body: |
+      ~each var=\$results~
+      ~\$item~
+      ~end~
+    

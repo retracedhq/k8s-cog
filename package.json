@@ -19,8 +19,8 @@
     "@types/chalk": "^0.4.31",
     "@types/lodash": "^4.14.42",
     "@types/node": "^6.0.46",
-    "source-map-support": "^0.4.6",
-    "tslint": "^4.0.2"
+    "tslint": "^4.0.2",
+    "typescript": "^2.1.4"
   },
   "dependencies": {
     "@types/request": "^0.0.36",
@@ -31,7 +31,7 @@
     "k8s": "^0.4.9",
     "lodash": "^4.16.6",
     "request": "^2.79.0",
-    "tmp": "^0.0.31",
-    "typescript": "^2.0.10"
+    "source-map-support": "^0.4.6",
+    "tmp": "^0.0.31"
   }
 }
