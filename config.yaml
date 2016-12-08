@@ -1,5 +1,5 @@
 ---
-cog_bundle_version: 5
+cog_bundle_version: 4
 name: k8s
 description: Interact with a Kubernetes cluster
 version: 0.0.4
