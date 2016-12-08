@@ -2,24 +2,24 @@
 cog_bundle_version: 4
 name: k8s
 description: Interact with a Kubernetes cluster
-version: 0.0.11
+version: 0.0.12
 author: Marc Campbell <marc.e.campbell@gmail.com>
 docker: 
   image: retracedhq/k8s-cog
-  tag: 0.0.11
+  tag: 0.0.12
 permissions:
   - k8s:read
   - k8s:write
 commands:
   pods:
     description: List all pods in the named cluster
-    executable: /home/bundle/k8s-cog/bin/pods
+    executable: /home/bundle/k8s-cog/lib/cmd/pods.js
     arguments: '<cluster>'
     rules:
       - when command is k8s:pods must have k8s:read
   deploy:
     description: Immediately deploy all k8s config declarations in a public Github repo
-    executable: /home/bundle/k8s-cog/bin/deploy
+    executable: /home/bundle/k8s-cog/lib/cmd/deploy.js
     arguments: '<cluster> <sha>'
     rules:
       - when command is k8s:deploy must have k8s:write      
