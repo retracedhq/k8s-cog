@@ -5,7 +5,7 @@ description: Interact with a Kubernetes cluster
 version: 0.0.4
 author: Marc Campbell <marc.e.campbell@gmail.com>
 docker: 
-  image: retracedhq/kubernetes-cog
+  image: retracedhq/k8s-cog
   tag: latest
 permissions:
   - k8s:read
