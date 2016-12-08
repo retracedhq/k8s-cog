@@ -87,5 +87,3 @@ function fetchAndProcessFile(cl: ClusterConfig, f: GithubFile): Promise<string> 
     });
   });
 }
-
-run();

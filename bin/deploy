@@ -1,0 +1,4 @@
+#!/usr/bin/env node
+
+var deploy = require("../lib/cmd/deploy");
+deploy.run();
