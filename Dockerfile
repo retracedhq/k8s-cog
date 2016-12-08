@@ -11,8 +11,8 @@ RUN apk --no-cache add go gcc musl-dev git && \
     rm -rf /home/bundle/go && \
     apk del go gcc musl-dev git
 
-WORKDIR /home/bundle
-COPY . /home/bundle
+WORKDIR /home/bundle/k8s-cog
+COPY . /home/bundle/k8s-cog
 
 RUN yarn
 RUN make
