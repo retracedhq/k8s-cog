@@ -1,4 +1,0 @@
-#!/usr/bin/env node
-
-var pods = require("../lib/cmd/pods");
-pods.run();

@@ -2,11 +2,11 @@
 cog_bundle_version: 4
 name: k8s
 description: Interact with a Kubernetes cluster
-version: 0.0.10
+version: 0.0.11
 author: Marc Campbell <marc.e.campbell@gmail.com>
 docker: 
   image: retracedhq/k8s-cog
-  tag: 0.0.10
+  tag: 0.0.11
 permissions:
   - k8s:read
   - k8s:write

@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import "source-map-support/register";
 import * as fs from "fs";
 import * as request from "request";
@@ -87,3 +89,5 @@ function fetchAndProcessFile(cl: ClusterConfig, f: GithubFile): Promise<string> 
     });
   });
 }
+
+run();

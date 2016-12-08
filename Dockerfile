@@ -16,3 +16,4 @@ COPY . /home/bundle/k8s-cog
 
 RUN yarn
 RUN make
+RUN chmod +x lib/cmd/*.js

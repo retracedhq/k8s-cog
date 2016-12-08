@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import "source-map-support/register";
 
 import getClusterConfig from "../config/getClusterConfig";
@@ -17,3 +19,5 @@ export default async function run() {
     process.exit(1);
   }
 };
+
+run();
