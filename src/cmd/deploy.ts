@@ -46,6 +46,7 @@ export default async function run() {
       const output = await kubeApply(clusterConfig, itemBody);
       results.push({
         name: item.name,
+        result: "patched",
       });
     }
   }
