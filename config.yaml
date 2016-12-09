@@ -2,11 +2,11 @@
 cog_bundle_version: 4
 name: k8s
 description: Interact with a Kubernetes cluster
-version: 0.0.13
+version: 0.0.14
 author: Marc Campbell <marc.e.campbell@gmail.com>
 docker: 
   image: retracedhq/k8s-cog
-  tag: 0.0.13
+  tag: 0.0.14
 permissions:
   - k8s:read
   - k8s:write
@@ -22,18 +22,18 @@ commands:
     executable: /home/bundle/k8s-cog/lib/cmd/deploy.js
     arguments: '<cluster> <sha>'
     rules:
-      - when command is k8s:deploy must have k8s:write      
+      - when command is k8s:deploy must have k8s:write
 templates:
   pods:
     body: |
       | NAME | READY | STATUS | RESTARTS | AGE |
       |------|-------|--------|----------|-----|
-      ~each var=\$results~
-      |~\$item.name~|~\$item.ready~|~\$item.status~|~\$item.restarts~|~\$item.age~|
+      ~each var=$results~
+      |~$item.name~|~$item.ready~|~$item.status~|~$item.restarts~|~$item.age~|
       ~end~
   deploy:
     body: |
-      ~each var=\$results~
-      ~\$item~
+      ~each var=$results~
+      ~$item~
       ~end~
     
