@@ -44,7 +44,9 @@ export default async function run() {
     if (applyExts.indexOf(path.extname(item.name)) !== -1) {
       const itemBody = await request(item.downloadUrl);
       const output = await kubeApply(clusterConfig, itemBody);
-      results.push(item.name);
+      results.push({
+        name: item.name,
+      });
     }
   }
 
