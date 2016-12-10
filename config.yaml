@@ -2,11 +2,11 @@
 cog_bundle_version: 4
 name: k8s
 description: Interact with a Kubernetes cluster
-version: 0.0.16
-author: Marc Campbell <marc.e.campbell@gmail.com>
+version: 0.0.17
+author: Marc Campbell <marc.e.campbell@gmail.com>, Joe Toscano <jtoscano42@gmail.com>
 docker: 
   image: retracedhq/k8s-cog
-  tag: 0.0.16
+  tag: 0.0.17
 permissions:
   - k8s:read
   - k8s:write
@@ -23,6 +23,18 @@ commands:
     arguments: '<cluster> <sha>'
     rules:
       - when command is k8s:deploy must have k8s:write
+  logs:
+    description: Show recent logs from a given pod
+    executable: /home/bundle/k8s-cog/lib/cmd/logs.js
+    arguments: '<cluster> <pod>'
+    options: 
+      count:
+        description: maximum number of lines to fetch
+        type: int
+        required: false
+        short_flag: c    
+    rules:
+      - when command is k8s:logs must have k8s:read      
 templates:
   pods:
     body: |
@@ -37,5 +49,10 @@ templates:
       |------|--------|
       ~each var=$results~
       |~$item.name~|~$item.result~|
+      ~end~
+  logs:
+    body: |
+      ~each var=$results~
+      ~$item.line~
       ~end~
     
