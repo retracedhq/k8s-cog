@@ -12,12 +12,18 @@ import getLogs from "../k8s/getLogs";
 // Options:
 // "count": max number of log lines to return 
 export default async function run() {
-  const clusterConfig = getClusterConfig(process.env.COG_ARGV_0);
+  const clusterName = process.env.COG_ARGV_0;
+  const podName = process.env.COG_ARGV_1;
+  const clusterConfig = getClusterConfig(clusterName);
   const count: number = process.env.COG_OPT_COUNT || 10;
-  const logs = await getLogs(clusterConfig, process.env.COG_ARGV_1, count);
-  process.stdout.write("COG_TEMPLATE: logs\n");
-  process.stdout.write("JSON\n");
-  process.stdout.write(JSON.stringify(logs));
+  const logs = await getLogs(clusterConfig, podName, count);
+  if (logs && logs.length) {
+    process.stdout.write("COG_TEMPLATE: logs\n");
+    process.stdout.write("JSON\n");
+    process.stdout.write(JSON.stringify(logs));
+  } else {
+    process.stdout.write(`No log lines were returned for \`${clusterName}:${podName}\``);
+  }
 };
 
 run().catch(console.error);
