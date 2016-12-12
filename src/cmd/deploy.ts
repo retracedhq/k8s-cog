@@ -56,4 +56,7 @@ export default async function run() {
   process.stdout.write(JSON.stringify(results));
 }
 
-run().catch(console.error);
+run().catch((err) => {
+  console.error(err);
+  process.exit(1);
+});
