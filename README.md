@@ -1,7 +1,5 @@
 # Kubernetes Bundle for Cog
 
-![Build Status](https://circleci.com/gh/retracedhq/kubernetes-cog.png)
-
 ## Commands
 ```
 k8s:deploy <cluster> <sha> - (similar to: kubectl apply)
